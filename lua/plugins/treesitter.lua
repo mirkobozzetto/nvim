@@ -1,4 +1,4 @@
--- Configuration Treesitter
+-- Treesitter configuration
 
 return {
     -- Treesitter

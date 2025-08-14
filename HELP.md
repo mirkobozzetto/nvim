@@ -1,349 +1,381 @@
-# 🚀 Guide Complet Neovim - Tous les Raccourcis
+# 🚀 Complete Neovim Guide - All Keybindings
 
-## 📁 Architecture des Dossiers
+## 📁 Folder Structure
 
 ```
 ~/.config/nvim/
-├── init.lua                 # Point d'entrée principal
+├── init.lua                 # Main entry point
 ├── lua/
-│   ├── core/               # Configuration de base
+│   ├── core/               # Base configuration
 │   │   ├── options.lua     # Options Neovim
-│   │   ├── keymaps.lua     # Raccourcis globaux
-│   │   └── autocmds.lua    # Autocommandes
+│   │   ├── keymaps.lua     # Global keybindings
+│   │   └── autocmds.lua    # Autocommands
 │   ├── config/
-│   │   └── lazy.lua        # Configuration du gestionnaire de plugins
-│   └── plugins/            # Configurations des plugins
-│       ├── colorscheme.lua # Thème
-│       ├── ui.lua          # Interface utilisateur
-│       ├── editor.lua      # Outils d'édition
-│       ├── lsp.lua         # Language Server Protocol
-│       ├── completion.lua  # Autocomplétion
-│       └── treesitter.lua  # Syntaxe avancée
-└── HELP.md                 # Ce fichier d'aide
+│   │   └── lazy.lua        # Plugin manager configuration
+│   └── plugins/            # Plugin configurations
+│       ├── colorscheme.lua # Theme
+│       ├── ui.lua          # User interface
+│       ├── editor.lua      # Editor tools
+│       ├── lsp.lua         # LSP configuration
+│       ├── completion.lua  # Autocompletion
+│       └── treesitter.lua  # Advanced syntax
+└── HELP.md                 # This help file
 ```
 
-## ⌨️ Raccourcis Clavier Complets
+## ⌨️ Complete Keyboard Shortcuts
 
 > **Leader key**: `Espace`
 
-### 🔤 Mode Normal
+### 🔤 Normal Mode
 
-#### Fichiers et Buffers
-| Raccourci | Action |
-|-----------|--------|
-| `<leader>w` | Sauvegarder |
-| `<leader>W` | Sauvegarder tous les fichiers |
-| `<leader>q` | Quitter |
-| `<leader>Q` | Forcer quitter tout |
-| `<leader>x` | Sauvegarder et quitter |
-| `<leader>bd` | Fermer buffer |
-| `<leader>bD` | Fermer tous les autres buffers |
-| `Shift+h` | Buffer précédent |
-| `Shift+l` | Buffer suivant |
+#### Files and Buffers
+
+| Raccourci    | Action                  |
+| ------------ | ----------------------- |
+| `<leader>w`  | Save                    |
+| `<leader>W`  | Save all files          |
+| `<leader>q`  | Quit                    |
+| `<leader>Q`  | Force quit              |
+| `<leader>x`  | Save and quit           |
+| `<leader>bd` | Close buffer            |
+| `<leader>bD` | Close all other buffers |
+| `Shift+h`    | Previous buffer         |
+| `Shift+l`    | Next buffer             |
 
 #### Navigation
-| Raccourci | Action |
-|-----------|--------|
-| `Ctrl+h/j/k/l` | Naviguer entre fenêtres |
-| `Ctrl+d` | Descendre demi-page (centré) |
-| `Ctrl+u` | Monter demi-page (centré) |
-| `n` | Recherche suivante (centrée) |
-| `N` | Recherche précédente (centrée) |
-| `gg` | Début du fichier |
-| `G` | Fin du fichier |
-| `{` / `}` | Paragraphe précédent/suivant |
-| `%` | Aller à la parenthèse correspondante |
 
-#### Mouvement par Mots (macOS)
-| Raccourci | Action |
-|-----------|--------|
-| `Option+←/→` | Mot gauche/droite |
-| `Option+b` | Mot précédent |
-| `Option+w` | Mot suivant |
-| `b` / `w` | Mot précédent/suivant (vim natif) |
-| `e` / `ge` | Fin de mot suivant/précédent |
+| Raccourci      | Action                              |
+| -------------- | ----------------------------------- |
+| `Ctrl+h/j/k/l` | Navigate between windows            |
+| `Ctrl+d`       | Scroll down half-page (centered)    |
+| `Ctrl+u`       | Scroll up half-page (centered)      |
+| `n`            | Next search (centered)              |
+| `N`            | Previous search (centered)          |
+| `gg`           | Beginning of file                   |
+| `G`            | End of file                         |
+| `{` / `}`      | Previous/next paragraph             |
+| `%`            | Go to the corresponding parenthesis |
 
-#### Fenêtres et Splits
-| Raccourci | Action |
-|-----------|--------|
-| `<leader>sv` | Split vertical |
+#### Word Movement (macOS)
+
+| Raccourci    | Action                          |
+| ------------ | ------------------------------- |
+| `Option+←/→` | Left/right word                 |
+| `Option+b`   | Previous word                   |
+| `Option+w`   | Next word                       |
+| `b` / `w`    | Previous/next word (vim native) |
+| `e` / `ge`   | Next/previous word (vim native) |
+
+#### Windows and Splits
+
+| Raccourci    | Action           |
+| ------------ | ---------------- |
+| `<leader>sv` | Split vertical   |
 | `<leader>sh` | Split horizontal |
-| `<leader>se` | Égaliser les splits |
-| `<leader>sx` | Fermer split |
-| `Ctrl+↑/↓` | Redimensionner hauteur |
-| `Ctrl+←/→` | Redimensionner largeur |
+| `<leader>se` | Equalize splits  |
+| `<leader>sx` | Close split      |
+| `Ctrl+↑/↓`   | Resize height    |
+| `Ctrl+←/→`   | Resize width     |
 
-#### Onglets
+#### Tabs
+
+| Raccourci    | Action           |
+| ------------ | ---------------- |
+| `<leader>tn` | New tab          |
+| `<leader>tc` | Close tab        |
+| `<leader>to` | Close other tabs |
+| `Tab`        | Next tab         |
+| `Shift+Tab`  | Previous tab     |
+
+### 🔍 Telescope (Fuzzy Search)
+
+| Raccourci    | Action                   |
+| ------------ | ------------------------ |
+| `<leader>ff` | Search files             |
+| `<leader>fg` | Search in content (grep) |
+| `<leader>fb` | List buffers             |
+| `<leader>fh` | Help pages               |
+| `<leader>fr` | Recent files             |
+| `<leader>fc` | Available commands       |
+| `<leader>fk` | All keymaps              |
+| `<leader>fs` | Search in current buffer |
+| `<leader>fd` | LSP diagnostics          |
+| `<leader>fm` | Marks                    |
+| `<leader>ft` | List of TODOs            |
+
+### 🌲 File Explorer (NvimTree)
+
+| Raccourci    | Action            |
+| ------------ | ----------------- |
+| `<leader>e`  | Toggle explorer   |
+| `<leader>ef` | Find current file |
+
+**In the explorer:**
 | Raccourci | Action |
 |-----------|--------|
-| `<leader>tn` | Nouvel onglet |
-| `<leader>tc` | Fermer onglet |
-| `<leader>to` | Fermer autres onglets |
-| `Tab` | Onglet suivant |
-| `Shift+Tab` | Onglet précédent |
-
-### 🔍 Telescope (Recherche Fuzzy)
-| Raccourci | Action |
-|-----------|--------|
-| `<leader>ff` | Rechercher fichiers |
-| `<leader>fg` | Recherche dans le contenu (grep) |
-| `<leader>fb` | Liste des buffers |
-| `<leader>fh` | Pages d'aide |
-| `<leader>fr` | Fichiers récents |
-| `<leader>fc` | Commandes disponibles |
-| `<leader>fk` | Tous les keymaps |
-| `<leader>fs` | Recherche dans buffer actuel |
-| `<leader>fd` | Diagnostics LSP |
-| `<leader>fm` | Marques |
-| `<leader>ft` | Liste des TODO |
-
-### 🌲 Explorateur de Fichiers (NvimTree)
-| Raccourci | Action |
-|-----------|--------|
-| `<leader>e` | Toggle explorateur |
-| `<leader>ef` | Trouver fichier actuel |
-
-**Dans l'explorateur:**
-| Raccourci | Action |
-|-----------|--------|
-| `Enter` | Ouvrir fichier/dossier |
-| `h` | Fermer dossier |
-| `l` | Ouvrir dossier |
-| `a` | Créer fichier/dossier |
-| `r` | Renommer |
-| `d` | Supprimer |
-| `x` | Couper |
-| `c` | Copier |
+| `Enter` | Open file/folder |
+| `h` | Close folder |
+| `l` | Open folder |
+| `a` | Create file/folder |
+| `r` | Rename |
+| `d` | Delete |
+| `x` | Cut |
+| `c` | Copy |
 | `p` | Coller |
-| `y` | Copier nom |
-| `Y` | Copier chemin |
-| `gy` | Copier chemin absolu |
-| `H` | Toggle fichiers cachés |
-| `R` | Rafraîchir |
+| `y` | Copy name |
+| `Y` | Copy path |
+| `gy` | Copy absolute path |
+| `H` | Toggle hidden files |
+| `R` | Refresh |
 
 ### 💻 LSP (Language Server Protocol)
-| Raccourci | Action |
-|-----------|--------|
-| `gd` | Aller à la définition |
-| `gD` | Aller à la déclaration |
-| `gi` | Aller à l'implémentation |
-| `gr` | Voir les références |
-| `gt` | Aller au type |
-| `K` | Documentation (hover) |
-| `Ctrl+k` | Signature de fonction |
-| `<leader>lr` | Renommer symbole |
-| `<leader>la` | Actions de code |
-| `<leader>lf` | Formater le fichier |
-| `<leader>ld` | Diagnostics de la ligne |
-| `<leader>lq` | Liste des diagnostics |
-| `<leader>lp` | Aperçu de définition |
-| `<leader>lo` | Outline du code |
-| `[d` | Diagnostic précédent |
-| `]d` | Diagnostic suivant |
 
-### 🎨 Formatage
-| Raccourci | Action |
-|-----------|--------|
-| `<leader>cf` | Formater le fichier/sélection |
-| `<leader>cF` | Toggle format automatique à la sauvegarde |
+| Raccourci    | Action                |
+| ------------ | --------------------- |
+| `gd`         | Go to definition      |
+| `gD`         | Go to declaration     |
+| `gi`         | Go to implementation  |
+| `gr`         | See references        |
+| `gt`         | Go to type            |
+| `K`          | Documentation (hover) |
+| `Ctrl+k`     | Function signature    |
+| `<leader>lr` | Rename symbol         |
+| `<leader>la` | Code actions          |
+| `<leader>lf` | Format file           |
+| `<leader>ld` | Line diagnostics      |
+| `<leader>lq` | Diagnostic list       |
+| `<leader>lp` | Preview definition    |
+| `<leader>lo` | Code outline          |
+| `[d`         | Previous diagnostic   |
+| `]d`         | Next diagnostic       |
+
+### 🎨 Formatting
+
+| Raccourci    | Action                          |
+| ------------ | ------------------------------- |
+| `<leader>cf` | Format file/selection           |
+| `<leader>cF` | Toggle automatic format on save |
 
 ### 🐙 Git (Gitsigns)
-| Raccourci | Action |
-|-----------|--------|
-| `]c` | Hunk suivant |
-| `[c` | Hunk précédent |
-| `<leader>gs` | Stage hunk |
-| `<leader>gr` | Reset hunk |
-| `<leader>gS` | Stage buffer complet |
-| `<leader>gR` | Reset buffer complet |
-| `<leader>gu` | Undo stage hunk |
-| `<leader>gp` | Preview hunk |
-| `<leader>gb` | Blame ligne |
-| `<leader>gtb` | Toggle blame |
-| `<leader>gd` | Diff this |
-| `<leader>gD` | Diff this ~ |
-| `<leader>gtd` | Toggle deleted |
+
+| Raccourci     | Action                                  |
+| ------------- | --------------------------------------- |
+| `]c`          | Next hunk                               |
+| `[c`          | Previous hunk                           |
+| `<leader>gs`  | Stage hunk                              |
+| `<leader>gr`  | Reset hunk                              |
+| `<leader>gS`  | Stage buffer                            |
+| `<leader>gR`  | Reset buffer                            |
+| `<leader>gu`  | Undo stage hunk                         |
+| `<leader>gp`  | Preview hunk                            |
+| `<leader>gb`  | Blame line                              |
+| `<leader>gtb` | Toggle blame                            |
+| `<leader>gd`  | Diff this                               |
+| `<leader>gD`  | Diff this ~ (diff with the last commit) |
+| `<leader>gtd` | Toggle deleted (show deleted lines)     |
 
 ### 💬 Commentaires
-| Raccourci | Action |
-|-----------|--------|
-| `gcc` | Commenter/décommenter ligne |
-| `gbc` | Commenter/décommenter bloc |
-| `gc` (visuel) | Commenter sélection |
-| `gb` (visuel) | Commenter bloc sélection |
-| `gcO` | Ajouter commentaire au-dessus |
-| `gco` | Ajouter commentaire en-dessous |
-| `gcA` | Ajouter commentaire fin de ligne |
+
+| Raccourci     | Action                     |
+| ------------- | -------------------------- |
+| `gcc`         | Comment/uncomment line     |
+| `gbc`         | Comment/uncomment block    |
+| `gc` (visual) | Comment selection          |
+| `gb` (visual) | Comment block selection    |
+| `gcO`         | Add comment above          |
+| `gco`         | Add comment below          |
+| `gcA`         | Add comment at end of line |
 
 ### 🖥️ Terminal
-| Raccourci | Action |
-|-----------|--------|
-| `Ctrl+\` | Toggle terminal flottant |
-| `<leader>tf` | Terminal flottant |
-| `<leader>th` | Terminal horizontal |
-| `<leader>tv` | Terminal vertical |
 
-**Dans le terminal:**
+| Raccourci    | Action                   |
+| ------------ | ------------------------ |
+| `Ctrl+\`     | Toggle floating terminal |
+| `<leader>tf` | Floating terminal        |
+| `<leader>th` | Horizontal terminal      |
+| `<leader>tv` | Vertical terminal        |
+
+**In the terminal:**
 | Raccourci | Action |
 |-----------|--------|
-| `Esc` ou `jk` | Mode normal |
-| `Ctrl+h/j/k/l` | Naviguer entre fenêtres |
+| `Esc` or `jk` | Normal mode |
+| `Ctrl+h/j/k/l` | Navigate between windows |
 
 ### ✏️ Mode Insertion
-| Raccourci | Action |
-|-----------|--------|
-| `jk` ou `jj` | Échapper (retour mode normal) |
-| `Ctrl+h/l` | Gauche/Droite |
-| `Ctrl+j/k` | Bas/Haut |
-| `Ctrl+a` | Début de ligne |
-| `Ctrl+e` | Fin de ligne |
-| `Option+←/→` | Mot gauche/droite |
-| `Option+b/w` | Mot précédent/suivant |
 
-### 🎯 Mode Visuel
-| Raccourci | Action |
-|-----------|--------|
-| `<` / `>` | Indenter gauche/droite |
-| `J` / `K` | Déplacer sélection bas/haut |
-| `p` | Coller sans perdre le registre |
-| `gc` | Commenter sélection |
+| Raccourci    | Action                         |
+| ------------ | ------------------------------ |
+| `jk` or `jj` | Escape (return to normal mode) |
+| `Ctrl+h/l`   | Left/Right                     |
+| `Ctrl+j/k`   | Down/Up                        |
+| `Ctrl+a`     | Beginning of line              |
+| `Ctrl+e`     | End of line                    |
+| `Option+←/→` | Left/Right word                |
+| `Option+b/w` | Previous/next word             |
+
+### 🎯 Visual Mode
+
+| Raccourci | Action                            |
+| --------- | --------------------------------- |
+| `<` / `>` | Indent left/right                 |
+| `J` / `K` | Move selection down/up            |
+| `p`       | Paste without losing the register |
+| `gc`      | Comment selection                 |
 
 ### 🔄 Autocomplétion (dans l'éditeur)
-| Raccourci | Action |
-|-----------|--------|
-| `Tab` | Suggestion suivante |
-| `Shift+Tab` | Suggestion précédente |
-| `Enter` | Accepter suggestion |
-| `Ctrl+Space` | Ouvrir suggestions |
-| `Ctrl+e` | Fermer suggestions |
-| `Ctrl+b/f` | Scroll docs |
+
+| Raccourci    | Action              |
+| ------------ | ------------------- |
+| `Tab`        | Next suggestion     |
+| `Shift+Tab`  | Previous suggestion |
+| `Enter`      | Accept suggestion   |
+| `Ctrl+Space` | Open suggestions    |
+| `Ctrl+e`     | Fermer suggestions  |
+| `Ctrl+b/f`   | Scroll docs         |
 
 ### 🎨 Surround (entourage de texte)
-| Raccourci | Action |
-|-----------|--------|
+
+| Raccourci          | Action                  |
+| ------------------ | ----------------------- |
 | `ys{motion}{char}` | Entourer avec caractère |
-| `ds{char}` | Supprimer entourage |
-| `cs{old}{new}` | Changer entourage |
-| `S{char}` (visuel) | Entourer sélection |
+| `ds{char}`         | Supprimer entourage     |
+| `cs{old}{new}`     | Changer entourage       |
+| `S{char}` (visuel) | Entourer sélection      |
 
 **Exemples:**
+
 - `ysiw"` : Entourer mot avec guillemets
 - `ds"` : Supprimer guillemets
 - `cs"'` : Changer " en '
 
 ### 🔧 Toggle Settings
-| Raccourci | Action |
-|-----------|--------|
-| `<leader>uw` | Toggle wrap |
-| `<leader>un` | Toggle numéros relatifs |
-| `<leader>us` | Toggle spell check |
-| `Esc` | Clear highlight recherche |
+
+| Raccourci    | Action                    |
+| ------------ | ------------------------- |
+| `<leader>uw` | Toggle wrap               |
+| `<leader>un` | Toggle numéros relatifs   |
+| `<leader>us` | Toggle spell check        |
+| `Esc`        | Clear highlight recherche |
 
 ### 📋 Quickfix & Location List
-| Raccourci | Action |
-|-----------|--------|
-| `<leader>co` | Ouvrir quickfix |
-| `<leader>cc` | Fermer quickfix |
-| `[q` / `]q` | Quickfix précédent/suivant |
-| `<leader>lo` | Ouvrir location list |
-| `<leader>lc` | Fermer location list |
-| `[l` / `]l` | Location précédente/suivante |
+
+| Raccourci    | Action                       |
+| ------------ | ---------------------------- |
+| `<leader>co` | Ouvrir quickfix              |
+| `<leader>cc` | Fermer quickfix              |
+| `[q` / `]q`  | Quickfix précédent/suivant   |
+| `<leader>lo` | Ouvrir location list         |
+| `<leader>lc` | Fermer location list         |
+| `[l` / `]l`  | Location précédente/suivante |
 
 ### 🎯 Treesitter Text Objects
-| Raccourci | Action |
-|-----------|--------|
-| `vaf` | Sélectionner fonction (outer) |
-| `vif` | Sélectionner fonction (inner) |
-| `vac` | Sélectionner classe (outer) |
-| `vic` | Sélectionner classe (inner) |
-| `vaa` | Sélectionner paramètre (outer) |
-| `via` | Sélectionner paramètre (inner) |
+
+| Raccourci | Action                         |
+| --------- | ------------------------------ |
+| `vaf`     | Sélectionner fonction (outer)  |
+| `vif`     | Sélectionner fonction (inner)  |
+| `vac`     | Sélectionner classe (outer)    |
+| `vic`     | Sélectionner classe (inner)    |
+| `vaa`     | Sélectionner paramètre (outer) |
+| `via`     | Sélectionner paramètre (inner) |
 
 ### 📝 Macros
-| Raccourci | Action |
-|-----------|--------|
-| `qa` | Enregistrer macro dans 'a' |
-| `q` | Arrêter enregistrement |
-| `@a` | Exécuter macro 'a' |
-| `Q` | Exécuter macro 'q' |
-| `@@` | Répéter dernière macro |
+
+| Raccourci | Action                     |
+| --------- | -------------------------- |
+| `qa`      | Enregistrer macro dans 'a' |
+| `q`       | Arrêter enregistrement     |
+| `@a`      | Exécuter macro 'a'         |
+| `Q`       | Exécuter macro 'q'         |
+| `@@`      | Répéter dernière macro     |
 
 ### 🚀 TODO Comments
-| Raccourci | Action |
-|-----------|--------|
-| `]t` | TODO suivant |
-| `[t` | TODO précédent |
+
+| Raccourci    | Action              |
+| ------------ | ------------------- |
+| `]t`         | TODO suivant        |
+| `[t`         | TODO précédent      |
 | `<leader>ft` | Liste tous les TODO |
 
-**Keywords supportés:**
-- `TODO:` - Tâche à faire
-- `FIX:` / `FIXME:` / `BUG:` - Bug à corriger
-- `HACK:` - Solution temporaire
-- `WARN:` / `WARNING:` - Avertissement
-- `PERF:` / `OPTIMIZE:` - Optimisation nécessaire
-- `NOTE:` / `INFO:` - Information importante
-- `TEST:` - Test nécessaire
+**Supported keywords:**
+
+- `TODO:` - Task to do
+- `FIX:` / `FIXME:` / `BUG:` - Bug to fix
+- `HACK:` - Temporary solution
+- `WARN:` / `WARNING:` - Warning
+- `PERF:` / `OPTIMIZE:` - Optimization needed
+- `NOTE:` / `INFO:` - Important information
+- `TEST:` - Test needed
 
 ## 🛠️ Commandes Utiles
 
 ### Lazy (Gestionnaire de Plugins)
-- `:Lazy` - Interface de gestion des plugins
-- `:Lazy update` - Mettre à jour les plugins
-- `:Lazy sync` - Synchroniser les plugins
-- `:Lazy clean` - Nettoyer les plugins inutilisés
+
+- `:Lazy` - Plugin manager
+- `:Lazy update` - Update plugins
+- `:Lazy sync` - Sync plugins
+- `:Lazy clean` - Clean unused plugins
 
 ### Mason (Gestionnaire LSP)
-- `:Mason` - Interface de gestion des LSP
-- `:MasonUpdate` - Mettre à jour Mason
-- `:MasonInstall <server>` - Installer un serveur LSP
+
+- `:Mason` - LSP manager
+- `:MasonUpdate` - Update Mason
+- `:MasonInstall <server>` - Install an LSP server
 
 ### Telescope
-- `:Telescope` - Voir toutes les commandes Telescope
-- `:Telescope help_tags` - Rechercher dans l'aide
+
+- `:Telescope` - See all Telescope commands
+- `:Telescope help_tags` - Search in help
 
 ### Divers
-- `:checkhealth` - Vérifier la santé de Neovim
-- `:TSInstall <language>` - Installer support Treesitter
-- `:ConformInfo` - Info sur les formatters
+
+- `:checkhealth` - Check Neovim health
+- `:TSInstall <language>` - Install Treesitter support
+- `:ConformInfo` - Info on formatters
 
 ## 💡 Tips & Tricks
 
-1. **Which-key**: Appuyez sur `<leader>` et attendez pour voir tous les raccourcis disponibles
+1. **Which-key**: Press `<leader>` and wait for all shortcuts to appear
 
-2. **Recherche rapide**:
-   - `/` pour rechercher
-   - `*` pour rechercher le mot sous le curseur
-   - `Ctrl+/` dans Telescope pour voir l'historique
+2. **Quick search**:
+
+   - `/` to search
+   - `*` to search the word under the cursor
+   - `Ctrl+/` in Telescope to see the history
 
 3. **Navigation rapide**:
-   - `Ctrl+o` pour revenir en arrière dans l'historique
-   - `Ctrl+i` pour avancer dans l'historique
-   - `''` pour revenir à la dernière position
 
-4. **Édition rapide**:
-   - `ci"` pour changer le contenu entre guillemets
-   - `da(` pour supprimer autour des parenthèses
-   - `.` pour répéter la dernière commande
+   - `Ctrl+o` to go back in history
+   - `Ctrl+i` to go forward in history
+   - `''` to go back to the last position
 
-5. **Multi-curseurs** (avec substitution):
-   - `:%s/old/new/g` - Remplacer dans tout le fichier
-   - `:s/old/new/g` - Remplacer dans la ligne
-   - Visual + `:s/old/new/g` - Remplacer dans la sélection
+4. **Quick editing**:
 
-6. **Marks (marques)**:
-   - `ma` - Créer marque 'a'
-   - `'a` - Aller à la marque 'a'
-   - `:marks` - Voir toutes les marques
+   - `ci"` to change the content between quotes
+   - `da(` to delete around parentheses
+   - `.` to repeat the last command
 
-## 🔄 Mise à jour
+5. **Multi-cursors** (with substitution):
 
-Pour mettre à jour cette configuration:
-1. `:Lazy update` - Mettre à jour les plugins
-2. `:TSUpdate` - Mettre à jour Treesitter
-3. `:MasonUpdate` - Mettre à jour les serveurs LSP
+   - `:%s/old/new/g` - Replace in the whole file
+   - `:s/old/new/g` - Replace in the line
+   - Visual + `:s/old/new/g` - Replace in the selection
+
+6. **Marks**:
+   - `ma` - Create mark 'a'
+   - `'a` - Go to mark 'a'
+   - `:marks` - See all marks
+
+## 🔄 Update
+
+To update this configuration:
+
+1. `:Lazy update` - Update plugins
+2. `:TSUpdate` - Update Treesitter
+3. `:MasonUpdate` - Update LSP servers
 
 ---
 
-**Rappel**: Leader key = `Espace`
+**Reminder**: Leader key = `Space`
 
-Pour voir ce fichier dans Neovim: `:e ~/.config/nvim/HELP.md`
+To see this file in Neovim: `:e ~/.config/nvim/HELP.md`

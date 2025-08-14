@@ -40,7 +40,7 @@ autocmd('BufWritePre', {
   end,
 })
 
--- Fermer certaines fenêtres avec 'q'
+-- Close some buffers with 'q'
 augroup('QuickClose', { clear = true })
 autocmd('FileType', {
   group = 'QuickClose',
@@ -50,7 +50,7 @@ autocmd('FileType', {
   end,
 })
 
--- Désactiver les numéros de ligne dans le terminal
+-- Disable line numbers in terminal
 augroup('TerminalSettings', { clear = true })
 autocmd('TermOpen', {
   group = 'TerminalSettings',
@@ -61,7 +61,7 @@ autocmd('TermOpen', {
   end,
 })
 
--- Création automatique de dossiers si inexistants
+-- Create directories automatically if they don't exist
 augroup('MkdirOnSave', { clear = true })
 autocmd('BufWritePre', {
   group = 'MkdirOnSave',
@@ -74,7 +74,7 @@ autocmd('BufWritePre', {
   end,
 })
 
--- Supprimer les espaces en fin de ligne
+-- Remove trailing spaces
 augroup('TrimWhitespace', { clear = true })
 autocmd('BufWritePre', {
   group = 'TrimWhitespace',

@@ -1,4 +1,4 @@
--- Configuration du thème
+-- Configuration of the theme
 
 return {
     {

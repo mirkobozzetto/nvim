@@ -1,4 +1,4 @@
--- Plugins d'édition
+-- Editor plugins
 
 return {
     -- Telescope (fuzzy finder)
@@ -189,7 +189,7 @@ return {
         end,
     },
 
-    -- Commentaire
+    -- Comment
     {
         'numToStr/Comment.nvim',
         config = function()

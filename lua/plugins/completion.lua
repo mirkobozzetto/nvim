@@ -1,4 +1,4 @@
--- Configuration de l'autocomplétion
+-- Configuration of the autocompletion
 
 return {
     -- Autocompletion
@@ -83,7 +83,7 @@ return {
                 },
             })
 
-            -- Autocomplétion pour / search
+            -- Autocompletion for / search
             cmp.setup.cmdline({ '/', '?' }, {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = {
@@ -91,7 +91,7 @@ return {
                 }
             })
 
-            -- Autocomplétion pour : commandes
+            -- Autocompletion for : commands
             cmp.setup.cmdline(':', {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = cmp.config.sources({
@@ -103,13 +103,4 @@ return {
         end,
     },
 
-    -- Copilot (optionnel - décommenter si vous avez Copilot)
-    -- {
-    --   "github/copilot.vim",
-    --   config = function()
-    --     vim.g.copilot_no_tab_map = true
-    --     vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-    --     vim.g.copilot_assume_mapped = true
-    --   end,
-    -- },
 }

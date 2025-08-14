@@ -9,54 +9,54 @@ g.mapleader = ' '
 g.maplocalleader = ' '
 
 -- Interface
-opt.number = true          -- Numéros de lignes
-opt.relativenumber = true  -- Numéros relatifs
-opt.cursorline = true      -- Highlight ligne courante
-opt.signcolumn = 'yes'     -- Toujours afficher la colonne des signes
-opt.colorcolumn = '80,120' -- Lignes guides à 80 et 120 caractères
-opt.wrap = false           -- Pas de retour à la ligne automatique
-opt.scrolloff = 8          -- Lignes minimum au-dessus/en-dessous du curseur
-opt.sidescrolloff = 8      -- Colonnes minimum à gauche/droite
+opt.number = true          -- Line numbers
+opt.relativenumber = true  -- Relative line numbers
+opt.cursorline = true      -- Highlight current line
+opt.signcolumn = 'yes'     -- Always show the sign column
+-- opt.colorcolumn = '80,120' -- Guides lines disabled (format on save active)
+opt.wrap = false           -- No automatic line wrapping
+opt.scrolloff = 8          -- Minimum lines above/below the cursor
+opt.sidescrolloff = 8      -- Minimum columns left/right of the cursor
 
 -- Indentation
-opt.expandtab = true   -- Utiliser des espaces au lieu de tabs
-opt.shiftwidth = 2     -- Taille de l'indentation
-opt.tabstop = 2        -- Taille d'une tabulation
-opt.softtabstop = 2    -- Taille d'une tabulation en mode insertion
-opt.smartindent = true -- Indentation intelligente
-opt.breakindent = true -- Indentation conservée sur les lignes wrappées
+opt.expandtab = true   -- Use spaces instead of tabs
+opt.shiftwidth = 2     -- Indentation size
+opt.tabstop = 2        -- Size of a tab
+opt.softtabstop = 2    -- Size of a tab in insert mode
+opt.smartindent = true -- Smart indentation
+opt.breakindent = true -- Indentation preserved on wrapped lines
 
 -- Recherche
-opt.ignorecase = true -- Recherche insensible à la casse
-opt.smartcase = true  -- Sensible si majuscule dans la recherche
-opt.hlsearch = true   -- Highlight les résultats
-opt.incsearch = true  -- Recherche incrémentale
+opt.ignorecase = true -- Case-insensitive search
+opt.smartcase = true  -- Case-sensitive if uppercase in search
+opt.hlsearch = true   -- Highlight search results
+opt.incsearch = true  -- Incremental search
 
 -- Comportement
-opt.mouse = 'a'                               -- Support de la souris
-opt.clipboard = 'unnamedplus'                 -- Utiliser le clipboard système
-opt.undofile = true                           -- Sauvegarder l'historique undo
-opt.updatetime = 250                          -- Temps avant mise à jour (ms)
-opt.timeoutlen = 300                          -- Temps d'attente pour les combinaisons de touches
-opt.completeopt = 'menuone,noselect,noinsert' -- Options pour l'autocomplétion
-opt.wildmode = 'longest:full,full'            -- Mode de complétion en ligne de commande
+opt.mouse = 'a'                               -- Mouse support
+opt.clipboard = 'unnamedplus'                 -- Use system clipboard
+opt.undofile = true                           -- Save undo history
+opt.updatetime = 250                          -- Update time (ms)
+opt.timeoutlen = 300                          -- Timeout for key combinations
+opt.completeopt = 'menuone,noselect,noinsert' -- Autocompletion options
+opt.wildmode = 'longest:full,full'            -- Completion mode for command line
 
 -- Apparence
-opt.termguicolors = true      -- Couleurs 24-bit
-opt.pumheight = 10            -- Hauteur max du menu popup
-opt.showmode = false          -- Ne pas afficher le mode (déjà dans lualine)
-opt.splitbelow = true         -- Nouveaux splits en bas
-opt.splitright = true         -- Nouveaux splits à droite
-opt.fillchars = { eob = ' ' } -- Supprimer les ~ en fin de buffer
+opt.termguicolors = true      -- 24-bit colors
+opt.pumheight = 10            -- Maximum height of the popup menu
+opt.showmode = false          -- Don't show the mode (already in lualine)
+opt.splitbelow = true         -- New splits below
+opt.splitright = true         -- New splits to the right
+opt.fillchars = { eob = ' ' } -- Remove ~ at the end of the buffer
 
 -- Performance
-opt.lazyredraw = false -- Redraw seulement quand nécessaire
-opt.synmaxcol = 240    -- Limite de colonne pour la syntaxe
+opt.lazyredraw = false -- Redraw only when necessary
+opt.synmaxcol = 240    -- Maximum column for syntax
 
 -- Backup
-opt.backup = false      -- Pas de fichiers backup
-opt.swapfile = false    -- Pas de fichiers swap
-opt.writebackup = false -- Pas de backup avant écriture
+opt.backup = false      -- No backup files
+opt.swapfile = false    -- No swap files
+opt.writebackup = false -- No backup before writing
 
 -- Sessions
 opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,terminal'
