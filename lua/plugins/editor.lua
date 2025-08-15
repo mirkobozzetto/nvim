@@ -60,17 +60,17 @@ return {
 
             -- Keymaps
             local keymap = vim.keymap.set
-            keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Fichiers' })
+            keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Files' })
             keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { desc = 'Grep' })
             keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Buffers' })
-            keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'Aide' })
-            keymap('n', '<leader>fr', '<cmd>Telescope oldfiles<cr>', { desc = 'Récents' })
-            keymap('n', '<leader>fc', '<cmd>Telescope commands<cr>', { desc = 'Commandes' })
+            keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'Help' })
+            keymap('n', '<leader>fr', '<cmd>Telescope oldfiles<cr>', { desc = 'Recent' })
+            keymap('n', '<leader>fc', '<cmd>Telescope commands<cr>', { desc = 'Commands' })
             keymap('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', { desc = 'Keymaps' })
-            keymap('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>', { desc = 'Recherche buffer' })
+            keymap('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>', { desc = 'Search buffer' })
             keymap('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', { desc = 'Diagnostics' })
-            keymap('n', '<leader>fm', '<cmd>Telescope marks<cr>', { desc = 'Marques' })
-            keymap('n', '<leader>fp', '<cmd>Telescope projects<cr>', { desc = 'Projets' })
+            keymap('n', '<leader>fm', '<cmd>Telescope marks<cr>', { desc = 'Marks' })
+            keymap('n', '<leader>fp', '<cmd>Telescope projects<cr>', { desc = 'Projects' })
         end,
     },
 
@@ -128,13 +128,13 @@ return {
                         if vim.wo.diff then return ']c' end
                         vim.schedule(function() gs.next_hunk() end)
                         return '<Ignore>'
-                    end, { expr = true, desc = 'Hunk suivant' })
+                    end, { expr = true, desc = 'Next hunk' })
 
                     map('n', '[c', function()
                         if vim.wo.diff then return '[c' end
                         vim.schedule(function() gs.prev_hunk() end)
                         return '<Ignore>'
-                    end, { expr = true, desc = 'Hunk précédent' })
+                    end, { expr = true, desc = 'Previous hunk' })
 
                     -- Actions
                     map('n', '<leader>gs', gs.stage_hunk, { desc = 'Stage hunk' })
@@ -147,7 +147,7 @@ return {
                     map('n', '<leader>gu', gs.undo_stage_hunk, { desc = 'Undo stage hunk' })
                     map('n', '<leader>gR', gs.reset_buffer, { desc = 'Reset buffer' })
                     map('n', '<leader>gp', gs.preview_hunk, { desc = 'Preview hunk' })
-                    map('n', '<leader>gb', function() gs.blame_line { full = true } end, { desc = 'Blame ligne' })
+                    map('n', '<leader>gb', function() gs.blame_line { full = true } end, { desc = 'Blame line' })
                     map('n', '<leader>gtb', gs.toggle_current_line_blame, { desc = 'Toggle blame' })
                     map('n', '<leader>gd', gs.diffthis, { desc = 'Diff this' })
                     map('n', '<leader>gD', function() gs.diffthis('~') end, { desc = 'Diff this ~' })
@@ -251,11 +251,11 @@ return {
 
             vim.keymap.set("n", "]t", function()
                 require("todo-comments").jump_next()
-            end, { desc = "TODO suivant" })
+            end, { desc = "Next TODO" })
 
             vim.keymap.set("n", "[t", function()
                 require("todo-comments").jump_prev()
-            end, { desc = "TODO précédent" })
+            end, { desc = "Previous TODO" })
 
             vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "TODO list" })
         end,
@@ -294,11 +294,11 @@ return {
             })
 
             -- Keymaps
-            vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = 'Terminal flottant' })
+            vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', { desc = 'Floating terminal' })
             vim.keymap.set('n', '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<cr>',
-                { desc = 'Terminal horizontal' })
+                { desc = 'Horizontal terminal' })
             vim.keymap.set('n', '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>',
-                { desc = 'Terminal vertical' })
+                { desc = 'Vertical terminal' })
 
             -- Terminal keymaps
             function _G.set_terminal_keymaps()

@@ -204,14 +204,14 @@ return {
             }
 
             dashboard.section.buttons.val = {
-                dashboard.button("f", "  Rechercher fichier", ":Telescope find_files<CR>"),
-                dashboard.button("n", "  Nouveau fichier", ":ene <BAR> startinsert<CR>"),
-                dashboard.button("r", "  Fichiers récents", ":Telescope oldfiles<CR>"),
-                dashboard.button("g", "  Rechercher texte", ":Telescope live_grep<CR>"),
+                dashboard.button("f", "  Find files", ":Telescope find_files<CR>"),
+                dashboard.button("n", "  New file", ":ene <BAR> startinsert<CR>"),
+                dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
+                dashboard.button("g", "  Find text", ":Telescope live_grep<CR>"),
                 dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua<CR>"),
                 dashboard.button("l", "  Lazy (plugins)", ":Lazy<CR>"),
                 dashboard.button("m", "  Mason (LSP)", ":Mason<CR>"),
-                dashboard.button("q", "  Quitter", ":qa<CR>"),
+                dashboard.button("q", "  Quit", ":qa<CR>"),
             }
 
             alpha.setup(dashboard.opts)

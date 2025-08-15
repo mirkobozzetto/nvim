@@ -1,4 +1,4 @@
--- Keymaps principaux
+-- Main keymaps
 vim = vim or {}
 
 local keymap = vim.keymap.set
@@ -12,48 +12,48 @@ keymap('', '<Space>', '<Nop>', opts)
 -- =============================================================================
 
 -- Files
-keymap('n', '<leader>w', '<cmd>w<CR>', { desc = 'Sauvegarder' })
-keymap('n', '<leader>W', '<cmd>wa<CR>', { desc = 'Sauvegarder tout' })
-keymap('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quitter' })
-keymap('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Forcer quitter tout' })
-keymap('n', '<leader>x', '<cmd>x<CR>', { desc = 'Sauvegarder et quitter' })
+keymap('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save file' })
+keymap('n', '<leader>W', '<cmd>wa<CR>', { desc = 'Save all' })
+keymap('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
+keymap('n', '<leader>Q', '<cmd>qa!<CR>', { desc = 'Force quit all' })
+keymap('n', '<leader>x', '<cmd>x<CR>', { desc = 'Save and quit' })
 
 -- Window navigation
-keymap('n', '<C-h>', '<C-w>h', { desc = 'Fenêtre gauche' })
-keymap('n', '<C-j>', '<C-w>j', { desc = 'Fenêtre bas' })
-keymap('n', '<C-k>', '<C-w>k', { desc = 'Fenêtre haut' })
-keymap('n', '<C-l>', '<C-w>l', { desc = 'Fenêtre droite' })
+keymap('n', '<C-h>', '<C-w>h', { desc = 'Window left' })
+keymap('n', '<C-j>', '<C-w>j', { desc = 'Window down' })
+keymap('n', '<C-k>', '<C-w>k', { desc = 'Window up' })
+keymap('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
 
 -- Resize windows
-keymap('n', '<C-Up>', '<cmd>resize -2<CR>', { desc = 'Réduire hauteur' })
-keymap('n', '<C-Down>', '<cmd>resize +2<CR>', { desc = 'Augmenter hauteur' })
-keymap('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Réduire largeur' })
-keymap('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Augmenter largeur' })
+keymap('n', '<C-Up>', '<cmd>resize -2<CR>', { desc = 'Decrease height' })
+keymap('n', '<C-Down>', '<cmd>resize +2<CR>', { desc = 'Increase height' })
+keymap('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Decrease width' })
+keymap('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Increase width' })
 
 -- Split windows
 keymap('n', '<leader>sv', '<C-w>v', { desc = 'Split vertical' })
 keymap('n', '<leader>sh', '<C-w>s', { desc = 'Split horizontal' })
-keymap('n', '<leader>se', '<C-w>=', { desc = 'Égaliser splits' })
-keymap('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Fermer split' })
+keymap('n', '<leader>se', '<C-w>=', { desc = 'Equalize splits' })
+keymap('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close split' })
 
 -- Buffers navigation
-keymap('n', '<S-h>', '<cmd>bprevious<CR>', { desc = 'Buffer précédent' })
-keymap('n', '<S-l>', '<cmd>bnext<CR>', { desc = 'Buffer suivant' })
-keymap('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = 'Fermer buffer' })
-keymap('n', '<leader>bD', '<cmd>%bd|e#<CR>', { desc = 'Fermer autres buffers' })
+keymap('n', '<S-h>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+keymap('n', '<S-l>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+keymap('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = 'Close buffer' })
+keymap('n', '<leader>bD', '<cmd>%bd|e#<CR>', { desc = 'Close other buffers' })
 
 -- Tabs navigation
-keymap('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = 'Nouvel onglet' })
-keymap('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = 'Fermer onglet' })
-keymap('n', '<leader>to', '<cmd>tabonly<CR>', { desc = 'Fermer autres onglets' })
-keymap('n', '<Tab>', '<cmd>tabnext<CR>', { desc = 'Onglet suivant' })
-keymap('n', '<S-Tab>', '<cmd>tabprevious<CR>', { desc = 'Onglet précédent' })
+keymap('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = 'New tab' })
+keymap('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = 'Close tab' })
+keymap('n', '<leader>to', '<cmd>tabonly<CR>', { desc = 'Close other tabs' })
+keymap('n', '<Tab>', '<cmd>tabnext<CR>', { desc = 'Next tab' })
+keymap('n', '<S-Tab>', '<cmd>tabprevious<CR>', { desc = 'Previous tab' })
 
 -- Quick navigation
-keymap('n', '<C-d>', '<C-d>zz', { desc = 'Descendre demi-page' })
-keymap('n', '<C-u>', '<C-u>zz', { desc = 'Monter demi-page' })
-keymap('n', 'n', 'nzzzv', { desc = 'Recherche suivante centrée' })
-keymap('n', 'N', 'Nzzzv', { desc = 'Recherche précédente centrée' })
+keymap('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down half page' })
+keymap('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up half page' })
+keymap('n', 'n', 'nzzzv', { desc = 'Next search centered' })
+keymap('n', 'N', 'Nzzzv', { desc = 'Previous search centered' })
 
 -- Clear search highlighting
 keymap('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search' })
@@ -64,86 +64,86 @@ keymap('n', '<leader>un', '<cmd>set relativenumber!<CR>', { desc = 'Toggle relat
 keymap('n', '<leader>us', '<cmd>set spell!<CR>', { desc = 'Toggle spell check' })
 
 -- =============================================================================
--- MODE INSERTION
+-- INSERT MODE
 -- =============================================================================
 
 -- Escape with jk or jj
-keymap('i', 'jk', '<Esc>', { desc = 'Échapper' })
-keymap('i', 'jj', '<Esc>', { desc = 'Échapper' })
+keymap('i', 'jk', '<Esc>', { desc = 'Escape' })
+keymap('i', 'jj', '<Esc>', { desc = 'Escape' })
 
   -- Quick navigation in insert mode
-keymap('i', '<C-h>', '<Left>', { desc = 'Gauche' })
-keymap('i', '<C-l>', '<Right>', { desc = 'Droite' })
-keymap('i', '<C-j>', '<Down>', { desc = 'Bas' })
-keymap('i', '<C-k>', '<Up>', { desc = 'Haut' })
+keymap('i', '<C-h>', '<Left>', { desc = 'Left' })
+keymap('i', '<C-l>', '<Right>', { desc = 'Right' })
+keymap('i', '<C-j>', '<Down>', { desc = 'Down' })
+keymap('i', '<C-k>', '<Up>', { desc = 'Up' })
 
 -- Go to beginning/end of line
-keymap('i', '<C-a>', '<Home>', { desc = 'Début de ligne' })
-keymap('i', '<C-e>', '<End>', { desc = 'Fin de ligne' })
+keymap('i', '<C-a>', '<Home>', { desc = 'Beginning of line' })
+keymap('i', '<C-e>', '<End>', { desc = 'End of line' })
 
 -- =============================================================================
 -- VISUAL MODE
 -- =============================================================================
 
 -- Indentation
-keymap('v', '<', '<gv', { desc = 'Indenter gauche' })
-keymap('v', '>', '>gv', { desc = 'Indenter droite' })
+keymap('v', '<', '<gv', { desc = 'Indent left' })
+keymap('v', '>', '>gv', { desc = 'Indent right' })
 
 -- Move text
-keymap('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Déplacer bas' })
-keymap('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Déplacer haut' })
+keymap('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move down' })
+keymap('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move up' })
 
--- Copier sans perdre le registre
-keymap('v', 'p', '"_dP', { desc = 'Coller sans perdre' })
+-- Copy without losing register
+keymap('v', 'p', '"_dP', { desc = 'Paste without losing' })
 
 -- =============================================================================
 -- WORD MOVEMENT (macOS)
 -- =============================================================================
 
 -- Option + arrows
-keymap({ 'n', 'i', 'v' }, '<M-Left>', '<C-Left>', { desc = 'Mot gauche' })
-keymap({ 'n', 'i', 'v' }, '<M-Right>', '<C-Right>', { desc = 'Mot droite' })
+keymap({ 'n', 'i', 'v' }, '<M-Left>', '<C-Left>', { desc = 'Word left' })
+keymap({ 'n', 'i', 'v' }, '<M-Right>', '<C-Right>', { desc = 'Word right' })
 
 -- Option + b/w (vim style)
-keymap({ 'n', 'v' }, '<M-b>', 'b', { desc = 'Mot précédent' })
-keymap({ 'n', 'v' }, '<M-w>', 'w', { desc = 'Mot suivant' })
-keymap('i', '<M-b>', '<C-o>b', { desc = 'Mot précédent (insert)' })
-keymap('i', '<M-w>', '<C-o>w', { desc = 'Mot suivant (insert)' })
+keymap({ 'n', 'v' }, '<M-b>', 'b', { desc = 'Previous word' })
+keymap({ 'n', 'v' }, '<M-w>', 'w', { desc = 'Next word' })
+keymap('i', '<M-b>', '<C-o>b', { desc = 'Previous word (insert)' })
+keymap('i', '<M-w>', '<C-o>w', { desc = 'Next word (insert)' })
 
 -- Command + arrows for beginning/end of line (macOS)
-keymap({'n', 'v', 'i'}, '<D-Left>', '<Home>', { desc = 'Début de ligne' })
-keymap({'n', 'v', 'i'}, '<D-Right>', '<End>', { desc = 'Fin de ligne' })
-keymap({'n', 'v', 'i'}, '<D-Up>', 'gg', { desc = 'Début du fichier' })
-keymap({'n', 'v', 'i'}, '<D-Down>', 'G', { desc = 'Fin du fichier' })
+keymap({'n', 'v', 'i'}, '<D-Left>', '<Home>', { desc = 'Beginning of line' })
+keymap({'n', 'v', 'i'}, '<D-Right>', '<End>', { desc = 'End of line' })
+keymap({'n', 'v', 'i'}, '<D-Up>', 'gg', { desc = 'Beginning of file' })
+keymap({'n', 'v', 'i'}, '<D-Down>', 'G', { desc = 'End of file' })
 
 -- =============================================================================
 -- USEFUL COMMANDS
 -- =============================================================================
 
 -- Quickfix
-keymap('n', '<leader>co', '<cmd>copen<CR>', { desc = 'Ouvrir quickfix' })
-keymap('n', '<leader>cc', '<cmd>cclose<CR>', { desc = 'Fermer quickfix' })
-keymap('n', '[q', '<cmd>cprevious<CR>', { desc = 'Quickfix précédent' })
-keymap('n', ']q', '<cmd>cnext<CR>', { desc = 'Quickfix suivant' })
+keymap('n', '<leader>co', '<cmd>copen<CR>', { desc = 'Open quickfix' })
+keymap('n', '<leader>cc', '<cmd>cclose<CR>', { desc = 'Close quickfix' })
+keymap('n', '[q', '<cmd>cprevious<CR>', { desc = 'Previous quickfix' })
+keymap('n', ']q', '<cmd>cnext<CR>', { desc = 'Next quickfix' })
 
 -- Location list
-keymap('n', '<leader>lo', '<cmd>lopen<CR>', { desc = 'Ouvrir location list' })
-keymap('n', '<leader>lc', '<cmd>lclose<CR>', { desc = 'Fermer location list' })
-keymap('n', '[l', '<cmd>lprevious<CR>', { desc = 'Location précédente' })
-keymap('n', ']l', '<cmd>lnext<CR>', { desc = 'Location suivante' })
+keymap('n', '<leader>lo', '<cmd>lopen<CR>', { desc = 'Open location list' })
+keymap('n', '<leader>lc', '<cmd>lclose<CR>', { desc = 'Close location list' })
+keymap('n', '[l', '<cmd>lprevious<CR>', { desc = 'Previous location' })
+keymap('n', ']l', '<cmd>lnext<CR>', { desc = 'Next location' })
 
 -- Macros
-keymap('n', 'Q', '@q', { desc = 'Exécuter macro q' })
-keymap('x', 'Q', ':norm @q<CR>', { desc = 'Exécuter macro sur sélection' })
+keymap('n', 'Q', '@q', { desc = 'Execute macro q' })
+keymap('x', 'Q', ':norm @q<CR>', { desc = 'Execute macro on selection' })
 
 -- =============================================================================
--- FORMATAGE
+-- FORMATTING
 -- =============================================================================
 
 -- Format the current buffer
 keymap('n', '<leader>cf', function()
   vim.lsp.buf.format({ async = false })
-end, { desc = 'Formater le fichier' })
+end, { desc = 'Format file' })
 
 -- Format the selection
 keymap('v', '<leader>cf', function()
@@ -154,7 +154,7 @@ keymap('v', '<leader>cf', function()
       ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
     }
   })
-end, { desc = 'Formater la sélection' })
+end, { desc = 'Format selection' })
 
 -- Toggle format on save
 keymap('n', '<leader>cF', function()
