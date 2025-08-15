@@ -2,39 +2,6 @@
 
 <div align="center">
 
-```
-       /|
-      / |
-     /  /
-    |   |
-   /    |
-   |    \_
-   |      \__
-   \       __\_______
-    \                 \_
-    | /                 \
-    \/                   \
-     |                    |
-     \                   \|
-     |                    \
-     \                     |
-     /\    \_               \
-    / |      \__ (   )       \
-   /  \      / |\\  /       __\____
-snd|  ,     |  /\ \ \__    |       \_
-   \_/|\___/   \   \}}}\__|  (@)     )
-    \)\)\)      \_\---\   \|       \ \
-                  \>\>\>   \   /\__o_o)
-                            | /  VVVVV
-                            \ \    \
-                             \ \MMMMM                  oh bugger!
-                              \______/         _____ /
-                                              |  O O|
-                                             /___|_|/\_
-                                        ==( |          |
-                                             (o)====(o)
-```
-
 **A modern, feature-rich Neovim configuration built for productivity**
 
 [![Neovim](https://img.shields.io/badge/Neovim-0.9+-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
